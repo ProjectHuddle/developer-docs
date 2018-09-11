@@ -4,7 +4,7 @@ module.exports = {
   themeConfig: {
     logo             : '../project-huddle-dark.svg',
     displayAllHeaders: true, // Default: false
-    repo             : 'developer-docs',
+    repo             : 'ProjectHuddle/developer-docs',
     editLinks        : true,
     editLinkText: 'Help us improve this page!',
     docsDir          : 'docs',
