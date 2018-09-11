@@ -27,6 +27,8 @@ module.exports = {
         'website-page',
         'mockup-thread',
         'website-thread',
+        'text-comment',
+        'approval-comment',
       ],
       '/javascript/'         : [
         '',
@@ -40,6 +42,7 @@ module.exports = {
         'projects',
         'mockups',
         'websites',
+        'comments',
       ],
       '/actions-and-filters/': [
         '',
