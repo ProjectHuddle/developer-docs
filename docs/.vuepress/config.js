@@ -20,6 +20,7 @@ module.exports = {
     sidebar          : {
       '/data-structures/'    : [
         '',
+        'accessing-data',
         'mockup-project',
         'website-project',
         'mockup-image',
