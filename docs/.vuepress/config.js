@@ -6,7 +6,7 @@ module.exports = {
     displayAllHeaders: true, // Default: false
     repo             : 'ProjectHuddle/developer-docs',
     editLinks        : true,
-    editLinkText: 'Help us improve this page!',
+    editLinkText     : 'Help us improve this page!',
     docsDir          : 'docs',
     nav              : [
       {text: 'Data Structures', link: '/data-structures/'},
@@ -20,6 +20,12 @@ module.exports = {
     sidebar          : {
       '/data-structures/'    : [
         '',
+        'mockup-project',
+        'website-project',
+        'mockup-image',
+        'website-page',
+        'mockup-thread',
+        'website-thread',
       ],
       '/javascript/'         : [
         '',
@@ -29,6 +35,7 @@ module.exports = {
       ],
       '/functions/'          : [
         '',
+        'relationships',
         'projects',
         'mockups',
         'websites',
