@@ -10,7 +10,7 @@ Underscore template files are identified using this naming convention:
 {template-name}.tmpl.php
 ```
 
-## Underscore Data
+## Underscore {{data}}
 To access data javascript model data from a template file, you can use the `data` object. Model data includes
 data associated with a specific model. For example a conversation thread will have resolved or assignment data.
 
@@ -29,4 +29,19 @@ For example:
   This is raw {{{ data.browser }}}. 
 </script>
 ```
+
+## Using data in an if-statment
+Sometimes you want to do more than echo content, you may want to check it for data. For example, you
+may want to display text if a thread is resolved.  You can use the `<#` and `#>` tags to wrap javascript
+code in templates:
+
+#### Example
+```js
+<script type="text/template">
+  <# if (data.resolved) { #>
+    This thread is resolved.
+  <# } #>
+</script>
+```
+
 

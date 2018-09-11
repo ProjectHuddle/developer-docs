@@ -10,8 +10,7 @@ module.exports = {
     docsDir          : 'docs',
     nav              : [
       {text: 'Data Structures', link: '/data-structures/'},
-      {text: 'Javascript', link: '/javascript/'},
-      {text: 'Templates', link: '/templates/'},
+      {text: 'Customization', link: '/customization/'},
       {text: 'Functions', link: '/functions/'},
       {text: 'Actions and Filters', link: '/actions-and-filters/'},
       // {text: 'REST API', link: '/rest-api/'},
@@ -30,12 +29,12 @@ module.exports = {
         'text-comment',
         'approval-comment',
       ],
-      '/javascript/'         : [
+      '/customization/'      : [
         '',
-      ],
-      '/templates/'          : [
-        '',
+        'templates',
         'underscore-templates',
+        'styles',
+          'scripts',
       ],
       '/functions/'          : [
         '',

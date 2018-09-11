@@ -1,5 +1,4 @@
-# Templates
-
+# Modifying Templates
 Project Huddle template files contain the markup and template structure for front-end and admin of your project interface. There are two different methods for changing the output of Project Huddle in the admin and front end of your site. 
 
 ## Using Built-In Hooks <Badge text="Recommended" vertical="bottom"/>
