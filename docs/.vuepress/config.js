@@ -2,7 +2,7 @@ module.exports = {
   title      : 'ProjectHuddle',
   description: 'Developer Docs',
   themeConfig: {
-    logo             : 'https://wordpress-140658-536948.cloudwaysapps.com/wp-content/themes/projecthuddle/assets/img/project-huddle-dark.svg',
+    logo             : '../project-huddle-dark.svg',
     displayAllHeaders: true, // Default: false
     repo             : 'developer-docs',
     editLinks        : true,
