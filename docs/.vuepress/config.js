@@ -1,9 +1,14 @@
 module.exports = {
   title      : 'ProjectHuddle',
+  dest       : 'developer-docs',
   description: 'Developer Docs',
   themeConfig: {
-    logo: 'https://wordpress-140658-536948.cloudwaysapps.com/wp-content/themes/projecthuddle/assets/img/project-huddle-dark.svg',
+    logo             : 'https://wordpress-140658-536948.cloudwaysapps.com/wp-content/themes/projecthuddle/assets/img/project-huddle-dark.svg',
     displayAllHeaders: true, // Default: false
+    repo             : 'developer-docs',
+    editLinks        : true,
+    editLinkText: 'Help us improve this page!',
+    docsDir          : 'docs',
     nav              : [
       {text: 'Data Structures', link: '/data-structures/'},
       {text: 'Javascript', link: '/javascript/'},
@@ -14,16 +19,16 @@ module.exports = {
       // {text: 'Examples', link: '/examples/'},
     ],
     sidebar          : {
-      '/data-structures/': [
+      '/data-structures/'    : [
         '',
       ],
-      '/javascript/': [
+      '/javascript/'         : [
         '',
       ],
-      '/templates/': [
+      '/templates/'          : [
         '',
       ],
-      '/functions/': [
+      '/functions/'          : [
         '',
         'projects',
         'mockups',
@@ -33,7 +38,7 @@ module.exports = {
         '',
       ],
       // fallback
-      '/'          : [
+      '/'                    : [
         '',
       ],
     },
