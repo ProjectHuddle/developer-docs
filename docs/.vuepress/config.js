@@ -1,6 +1,5 @@
 module.exports = {
   title      : 'ProjectHuddle',
-  dest       : 'developer-docs',
   description: 'Developer Docs',
   themeConfig: {
     logo             : 'https://wordpress-140658-536948.cloudwaysapps.com/wp-content/themes/projecthuddle/assets/img/project-huddle-dark.svg',
