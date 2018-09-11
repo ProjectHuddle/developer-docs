@@ -35,10 +35,12 @@ module.exports = {
       ],
       '/templates/'          : [
         '',
+        'underscore-templates',
       ],
       '/functions/'          : [
         '',
         'relationships',
+        'data',
         'projects',
         'mockups',
         'websites',
