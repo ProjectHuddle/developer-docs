@@ -1,4 +1,4 @@
-# Adding Custom Styles
+# Custom Styles and Scripts
 You can add custom stylesheets and scripts to ProjectHuddle. 
 However, the plugin automatically dequeues all non-plugin scripts and 
 styles on the project front end page. The reason for this is to prevent 
@@ -8,7 +8,7 @@ For instance, it's not necessary to have your SEO plugin and Social Sharing plug
 on the project page since it's a much more private page. This also helps with privacy 
 and loading speed for your ProjectHuddle pages.
 
-## Adding A Custom Stylesheet
+## Adding Stylesheets
 The way to add your own stylesheet to the ProjectHuddle project page is to first enqueue it, 
 then also add the handle to the allowed styles filter.
 
@@ -68,4 +68,44 @@ add_action( 'ph_style_options_output', 'ph_add_inline_styles' );
 
 // add to websites
 add_action( 'ph_website_style_options_output', 'ph_add_inline_styles' ); 
+```
+
+## Adding Scripts
+The way to add your own script to the ProjectHuddle project page is to first enqueue it, 
+then also add the handle to the allowed scripts filter. Here's an example:
+
+```php
+<?php
+/**
+ * Add your custom script
+ * Be sure to change 'my' to your own prefix to prevent conflicts
+ */
+function my_projecthuddle_scripts() {
+	// bail if not a projecthuddle post type
+    if ( ! ( is_singular('ph-project') || is_singular('ph-website') ) ) {
+        return;
+    }
+    
+	// add a new script using wp_enqueue_script
+	wp_enqueue_script( 'my_ph_script',  get_stylesheet_directory_uri() . '/path/to/your/script.js', array(
+		'jquery',
+		'backbone',
+		'underscore',
+		'wp-backbone',
+	), '1.0', false );
+}
+add_action( 'wp_enqueue_scripts', 'my_projecthuddle_scripts' );
+
+/**
+ * Add your script handle to allowed scripts
+ */
+function my_allowed_ph_scripts( $scripts = array() ) {
+	$scripts[] = 'my_ph_script';
+	return $scripts;
+}
+// add to mockups
+add_filter( 'ph_allowed_scripts', 'my_allowed_ph_scripts' ); 
+
+// add to websites
+add_filter( 'ph_allowed_website_scripts', 'my_allowed_ph_scripts' ); 
 ```

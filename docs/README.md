@@ -1,7 +1,7 @@
 ---
 home: true
-actionText: Data Structures →
-actionLink: /data-structures/
+actionText: Customization →
+actionLink: /customization/
 features:
 - title: Extend
   details: Extend Projecthuddle functionality to add new features and integrations.

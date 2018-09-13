@@ -9,14 +9,22 @@ module.exports = {
     editLinkText     : 'Help us improve this page!',
     docsDir          : 'docs',
     nav              : [
-      {text: 'Data Structures', link: '/data-structures/'},
       {text: 'Customization', link: '/customization/'},
+      {text: 'Data Structures', link: '/data-structures/'},
       {text: 'Functions', link: '/functions/'},
       {text: 'Actions and Filters', link: '/actions-and-filters/'},
       // {text: 'REST API', link: '/rest-api/'},
       // {text: 'Examples', link: '/examples/'},
     ],
     sidebar          : {
+      '/customization/'      : [
+        '',
+        'templates',
+        'underscore-templates',
+        'styles-and-scripts',
+        'javascript',
+        'extending',
+      ],
       '/data-structures/'    : [
         '',
         'accessing-data',
@@ -29,13 +37,6 @@ module.exports = {
         'text-comment',
         'approval-comment',
       ],
-      '/customization/'      : [
-        '',
-        'templates',
-        'underscore-templates',
-        'styles',
-          'scripts',
-      ],
       '/functions/'          : [
         '',
         'relationships',
@@ -47,6 +48,10 @@ module.exports = {
       ],
       '/actions-and-filters/': [
         '',
+        'php-actions',
+        'php-filters',
+        'js-actions',
+        'js-filters',
       ],
       // fallback
       '/'                    : [
