@@ -13,6 +13,7 @@ module.exports = {
       {text: 'Data Structures', link: '/data-structures/'},
       {text: 'Functions', link: '/functions/'},
       {text: 'Actions and Filters', link: '/actions-and-filters/'},
+      {text: 'Back To Main Site', link: 'https://projecthuddle.io' }
       // {text: 'REST API', link: '/rest-api/'},
       // {text: 'Examples', link: '/examples/'},
     ],
