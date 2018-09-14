@@ -9,7 +9,6 @@ Comments where a user has typed something into the conversation. This is the mos
 ph_get_comments(
     array(
         'post_id'       => $thread->ID,
-        'ph_force_show' => true,
         'type'          => 'ph_comment',
         'number'        => 1,
         'order'         => 'ASC',

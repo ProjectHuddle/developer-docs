@@ -10,7 +10,6 @@ to use a sentence with the user's name.
 ph_get_comments(
     array(
         'post_id'       => $thread->ID,
-        'ph_force_show' => true,
         'type'          => 'ph_approval',
         'number'        => 1,
         'order'         => 'DESC',

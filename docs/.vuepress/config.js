@@ -8,14 +8,16 @@ module.exports = {
     editLinks        : true,
     editLinkText     : 'Help us improve this page!',
     docsDir          : 'docs',
+    // agolia  : {
+    //   apiKey: '8c34379e8159b956230b38db85762594',
+    //   indexName: 'prod_DOCS'
+    // },
     nav              : [
       {text: 'Customization', link: '/customization/'},
       {text: 'Data Structures', link: '/data-structures/'},
       {text: 'Functions', link: '/functions/'},
       {text: 'Actions and Filters', link: '/actions-and-filters/'},
       {text: 'Back To Main Site', link: 'https://projecthuddle.io' }
-      // {text: 'REST API', link: '/rest-api/'},
-      // {text: 'Examples', link: '/examples/'},
     ],
     sidebar          : {
       '/customization/'      : [
