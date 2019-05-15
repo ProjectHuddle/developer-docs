@@ -2,7 +2,7 @@ module.exports = {
   title: "ProjectHuddle",
   description: "Developer Docs",
   themeConfig: {
-    logo: "../project-huddle-dark-v2.svg",
+    logo: "../projecthuddle-dark-v2.svg",
     displayAllHeaders: true, // Default: false
     repo: "ProjectHuddle/developer-docs",
     editLinks: true,
