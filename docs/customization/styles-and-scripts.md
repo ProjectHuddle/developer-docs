@@ -60,14 +60,36 @@ function ph_add_inline_styles() { ?>
     }
     .postid-3996 .ph-project-image-inner img {
         max-height: 100%;
-    }";
+    }
 <?php }
 
-// add to mockups
+// add to all projects
 add_action( 'ph_style_options_output', 'ph_add_inline_styles' );
+```
 
-// add to websites
-add_action( 'ph_website_style_options_output', 'ph_add_inline_styles' ); 
+```php
+<?php
+/*
+ * Quickly add inline css styles to only website projects
+ */
+function ph_add_inline_styles() { 
+    global $post;
+    
+    if ( 'ph-website' !== get_post_type($post) ) { 
+        return;
+    }
+    ?>
+    
+    .postid-3996 .ph-project-image-inner {
+        height: 100%;
+    }
+    .postid-3996 .ph-project-image-inner img {
+        max-height: 100%;
+    }
+<?php }
+
+// add to all projects
+add_action( 'ph_style_options_output', 'ph_add_inline_styles' );
 ```
 
 ## Adding Scripts
