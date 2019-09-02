@@ -107,7 +107,7 @@ Here are a few examples of how this formula works:
 
 Trigger an action when a **mockup thread** is resolved:
 ```php
-add_action( 'ph_mockup_rest_update_thread_attribute', 'my_custom_fuction', 10, 3);
+add_action( 'ph_mockup_rest_update_thread_attribute', 'my_custom_function', 10, 3);
 
 function my_custom_function( $attr, $value, $object ) {
     // we're only looking for "resolved" changes
