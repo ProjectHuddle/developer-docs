@@ -23,6 +23,7 @@ module.exports = {
     sidebar: {
       "/customization/": [
         "",
+        "vue",
         "templates",
         "underscore-templates",
         "styles-and-scripts",
