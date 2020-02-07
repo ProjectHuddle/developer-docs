@@ -51,16 +51,16 @@ extendComponent("LargeTimeline", {
 
 Although you can completely replace a template using the extendComponent method, it's not recommended due to possible breaking changes. Instead, we've placed named slots throughout our templates so you can add your own components without overwriting anything.
 
-### addToSlot
+### this.insertIntoSlot
 
-You can use the addToSlot method to add your own html or vue components to slots in the template:
+You can use the global insertIntoSlot method in the mounted hooks of your extended component to add your own html or vue components to **slots** in the template. We've enriched the components we use with a bunch of empty slots so you can add your components to different parts. Think of them sort of like WordPress' `do_action` hooks, but in javascript.
 
 ```js
-// import function
-const { addToSlot } = ph.components;
-
 // create a component
-let component = Vue.component("test", {
+let Component = Vue.component("test", {
+  props: {
+    id: Number
+  },
   data: function() {
     return {
       count: 0
@@ -70,6 +70,59 @@ let component = Vue.component("test", {
     '<button class="el-button el-button--primary" @click="count++">You clicked me {{ count }} times.</button>'
 });
 
-// add to a slot
-addToSlot("LargeTimeline", "beforeControls", component);
+// extend the timeline component and add our component into the 'slot-name' slot!
+extendComponent("LargeTimeline", {
+  mounted() {
+    this.insertIntoSlot("slot-name", Component, {
+      props: {
+        id: this.thread.id
+      }
+    });
+  }
+});
 ```
+
+insertIntoSlot requires a slot name, a component, and an options object. The options object is identical to `createElements` options, which are documented here:
+
+[createElement Arguments](https://vuejs.org/v2/guide/render-function.html#The-Data-Object-In-Depth)
+
+### this.insertComponent
+
+You can use the global insertComponent method in the mounted hooks of your extended component to append your own html or vue components to **refs** in the template. 
+
+```js
+// create a component
+let Component = Vue.component("test", {
+  props: {
+    id: Number
+  },
+  data: function() {
+    return {
+      count: 0
+    };
+  },
+  template:
+    '<button class="el-button el-button--primary" @click="count++">You clicked me {{ count }} times.</button>'
+});
+
+// extend the timeline component and append our component into the 'content' ref element!
+extendComponent("LargeTimeline", {
+  mounted() {
+    this.insertComponent({
+      ref: "content",
+      component: Component,
+      data: {
+        propsData: {
+          id: this.comment.id
+        }
+      },
+      key: `attachments-${this.comment.id}`
+    });
+  }
+});
+
+```
+
+You'll notice in the `this.insertComponent` will require a `key` attribute. This is much like how v-for requires a unique key so our component extendor can keep track of the node's identity. This method requires a single options object with the a `ref`, `component`, `data`, and `key` attributes. The `data` attribute takes the same options as a Vue instance, since we're essentially creating a new Vue instance behind the scenes:
+
+[Creating a new Vue Instance](https://vuejs.org/v2/guide/instance.html)
