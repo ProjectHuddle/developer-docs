@@ -17,8 +17,8 @@ module.exports = {
       { text: "Data Structures", link: "/data-structures/" },
       { text: "Functions", link: "/functions/" },
       { text: "Actions and Filters", link: "/actions-and-filters/" },
-      { text: "Rest API", link: "https://api.projecthuddle.io" },
-      { text: "Back To Main Site", link: "https://projecthuddle.io" }
+      { text: "Rest API", link: "https://api.projecthuddle.com" },
+      { text: "Back To Main Site", link: "https://projecthuddle.com" }
     ],
     sidebar: {
       "/customization/": [
