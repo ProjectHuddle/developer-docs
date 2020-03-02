@@ -75,6 +75,7 @@ extendComponent("LargeTimeline", {
   }
 });
 ```
+These work just like mixins, so your lifecycle hooks (mounted, beforeCreate, etc) will be called before the component's is called. 
 
 ## Altering Templates
 
@@ -83,6 +84,15 @@ Although you can completely replace a template using the extendComponent method,
 ### this.insertIntoSlot
 
 You can use the global insertIntoSlot method in the mounted hooks of your extended component to add your own html or vue components to **slots** in the template. We've enriched the components we use with a bunch of empty slots so you can add your components to different parts. Think of them sort of like WordPress' `do_action` hooks, but in javascript.
+
+This function takes 3 arguments: 
+
+| Argument        | Type           | Description  |
+| ------------- |-------------| -----|
+| slotName     | `string` | The name of the slot in the component |
+| component      | `Vue instance or component` | The component or Vue instance you want to add. |
+| options | `object`  | [createElement Arguments](https://vuejs.org/v2/guide/render-function.html#The-Data-Object-In-Depth)  |
+
 
 ```js
 // create a component
@@ -118,6 +128,15 @@ insertIntoSlot requires a slot name, a component, and an options object. The opt
 ### this.insertComponent
 
 You can use the global insertComponent method in the mounted hooks of your extended component to append your own html or vue components to **refs** in the template. 
+
+This function takes 1 object as an argument, with the following properties: 
+
+| Argument        | Type           | Description  |
+| ------------- |-------------| -----|
+| ref     | `string` | The name of the ref in the component |
+| component      | `Vue instance or component` | The component or Vue instance you want to add. |
+| key      | `mixed` | A unique key for the component. This is required for updating-in place. |
+| data | `object`  | Vue instance arguments, outlined here:[Creating a new Vue Instance](https://vuejs.org/v2/guide/instance.html)  |
 
 ```js
 // create a component
